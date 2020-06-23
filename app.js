@@ -32,11 +32,14 @@ app.post("/", function(req, res) {
   };
 
   const jsonData = JSON.stringify(data);
-
-const url="https://us10.api.mailchimp.com/3.0/lists/e27a67ecde";
+  
+// connecting with mailchimp database
+// important
+//this is an already disabled api key,it is not advisable to store api keys in public files.
+  const url="https://us10.api.mailchimp.com/3.0/lists/e27a67ecde";
 const options={
   method:"post",
-  auth:"ananya:99f81c5b128fb2f3c23c1bb8cc859271-us10"
+  auth:"ananya:99f81c5b128fb2f3c23c1bb8cc859271-us10" 
 }
 const request=https.request(url,options,function(response){
 
@@ -60,6 +63,4 @@ request.end();
 app.listen(process.env.PORT||3000, function() {
   console.log("server is working");
 });
-// 99f81c5b128fb2f3c23c1bb8cc859271-us10
 
-// list id e27a67ecde
